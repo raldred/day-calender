@@ -1,16 +1,20 @@
-%table
-  %tr
-    %td.image{:colspan=>2}
-      %img{:src=>"/images/#{@day}.jpg"}
-  %tr
-    %td{:width=>'100px',:align=>'center',:rowspan=>3}
-      %b{:style=>'font-size:120px;line-height:60px;margin-top:10px;display:block'}
-        = @time.day
-    %td
-      ="#{@time.strftime('%A')}".upcase
-  %tr
-    %td
-      ="#{@time.strftime('%B')}".upcase
-  %tr
-    %td
-      ="#{@time.year}"
+%div{:style=>'position:relative'}
+  %table
+    %tr
+      %td.image{:colspan=>2}
+        %img{:src=>'/images/'+ "%04d" % @day +'.jpg',:align=>'center'}
+        %div.copyright
+          &copy; Rob Aldred
+        
+    %tr
+      %td{:width=>'100px',:align=>'center',:rowspan=>3}
+        %b{:style=>'font-size:120px;line-height:60px;margin-top:10px;display:block'}
+          = @time.day
+      %td
+        ="#{@time.strftime('%A')}".upcase
+    %tr
+      %td
+        ="#{@time.strftime('%B')}".upcase
+    %tr
+      %td
+        ="#{@time.year}"

@@ -1,5 +1,5 @@
 %link{:href => 'calender.css', :media => 'screen', :rel => 'stylesheet', :type => 'text/css'}
--1.upto(365) do |day|
+-1.upto(10) do |day|
   - @day = day
   - @time = @time + 1.day if day > 1
   = haml(:_day, :layout => false)
