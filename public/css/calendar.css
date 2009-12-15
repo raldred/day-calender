@@ -1,0 +1,25 @@
+table {
+  width:550px;
+  height:450px;
+  border-collapse:collapse;
+  border:1px solid black;
+}
+
+td {
+  border:1px solid black;
+  font-family:helvetica;
+  font-size:20px;
+  font-weight:bold;
+  padding:6px;
+}
+
+td.image {
+  padding:0;
+  height:340px;
+  border-bottom:4px solid black;
+}
+
+td.image img {
+  padding:0;
+  margin:0;
+}
