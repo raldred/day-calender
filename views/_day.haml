@@ -1,14 +1,20 @@
+- image_file = "%04d" % @day
+- img = Magick::Image.read("#{ENV['PWD']}/public/images/#{image_file}.jpg").first
+/ - thumb = img.resize_to_fit(550)
+- thumb = img.resize_to_fill(550, 360)
+- thumb.write("#{ENV['PWD']}/public/images/#{image_file}_resized.jpg")
+
 %div{:style=>'position:relative'}
   %table
     %tr
       %td.image{:colspan=>2}
-        %img{:src=>'/images/'+ "%04d" % @day +'.jpg',:align=>'center'}
+        %img{:src=>'/images/'+ image_file + '_resized.jpg' ,:align=>'center'}
         %div.copyright
           &copy; Rob Aldred
         
     %tr
-      %td{:width=>'100px',:align=>'center',:rowspan=>3}
-        %b{:style=>'font-size:120px;line-height:60px;margin-top:10px;display:block'}
+      %td.day{:width=>'100px',:align=>'center',:rowspan=>3}
+        %b
           = @time.day
       %td
         ="#{@time.strftime('%A')}".upcase

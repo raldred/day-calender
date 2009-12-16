@@ -2,6 +2,7 @@ require 'rubygems'
 require 'sinatra'
 require 'activesupport'
 require 'haml'
+require 'RMagick'
 
 get '/' do
   year = (params[:year]) ? params[:year] : 2010
