@@ -1,4 +1,4 @@
-- image_file = "%04d" % @day
+- image_file = @day
 - img = Magick::Image.read("#{ENV['PWD']}/public/images/#{image_file}.jpg").first
 / - thumb = img.resize_to_fit(550)
 - thumb = img.resize_to_fill(550, 360)
@@ -8,7 +8,7 @@
   %table
     %tr
       %td.image{:colspan=>2}
-        %img{:src=>'/images/'+ image_file + '_resized.jpg' ,:align=>'center'}
+        %img{:src=>"/images/#{image_file}_resized.jpg" ,:align=>'center'}
         %div.copyright
           &copy; Rob Aldred
         
